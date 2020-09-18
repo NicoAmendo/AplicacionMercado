@@ -1,0 +1,20 @@
+#bodyform{
+    width:475;
+    background-color:#60799b;
+    border: solid 3px rgb(204, 219, 204);
+    color: white;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+#formulario{
+    width: 200px;
+    margin-left: 44;
+    border: solid rgb(204, 219, 204) 3px;
+} 
+
+.titulodeform{
+    font-size: 18px;
+    font-style: bold;
+    margin-top: 10px;
+    margin-bottom: 20px;
+} 

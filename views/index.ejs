@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>MercadoLibreAPP</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="/stylesheets/todoJunto.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap" rel="stylesheet">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <div class= "container" id="bodyform">
+      <h1 id= "titulodeform">Centro de Vendedores</h1>
+     <p>buscador de vendedor:</p>
+      <input class="form-control" type="text" id="formulario">
+      <button class="btn btn-outline-success my-2 my-sm-0" id="boton">Buscar</button>
+
+    <ul id="resultado">
+     </ul>
+  </div>
+  
+  <script>
+    const vendedores = [
+     {seller_id:"12312913", nombre:"marcos"},
+     {seller_id:"1731213", nombre:"fulano"},
+     {seller_id:"1231213", nombre:"mamenganorcos"},
+     {seller_id:"123123", nombre:"pedro"},
+     {seller_id:"12313", nombre:"marcelo"},
+    ]
+
+    const formulario = document.querySelector("#formulario");
+    const boton = document.querySelector("#boton");
+    const resultado = document.querySelector("#resultado");
+    const filtrar = () =>{
+      resultado.innerHTML = "";
+
+     // console.log(formulario.value);
+     const texto = formulario.value.toLowerCase();
+     for(let vendedor of vendedores){ 
+      let nombre = vendedor.nombre.toLowerCase();
+       if(nombre.indexOf(texto) !== -1){
+         resultado.innerHTML += `
+        <li><a href="/products">${vendedor.seller_id} - nombre:${vendedor.nombre}</a></li>
+           `               
+     } 
+    }
+    if(resultado.innerHTML === ""){
+      resultado.innerHTML += `
+      <li>vendedor no encontrado</li>
+`
+    } 
+  }
+
+    boton.addEventListener("click", filtrar)
+    formulario.addEventListener("keyup", filtrar);
+
+    filtrar;
+
+  </script>
+  
+</body>
+</html>
+  </body>
+</html>
