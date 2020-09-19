@@ -13,21 +13,40 @@
   <body>
     <div class= "container" id="bodyform">
       <h1 id= "titulodeform">Centro de Vendedores</h1>
-     <p>buscador de vendedor:</p>
+     <p>Buscador de vendedor:</p>
       <input class="form-control" type="text" id="formulario">
-      <button class="btn btn-outline-success my-2 my-sm-0" id="boton">Buscar</button>
+      <button class="btn btn-outline" id="boton">Listar Todos</button>
 
     <ul id="resultado">
      </ul>
   </div>
   
   <script>
-    const vendedores = [
-     {seller_id:"12312913", nombre:"marcos"},
-     {seller_id:"1731213", nombre:"fulano"},
-     {seller_id:"1231213", nombre:"mamenganorcos"},
-     {seller_id:"123123", nombre:"pedro"},
-     {seller_id:"12313", nombre:"marcelo"},
+  /*
+function traerDatos(){
+
+const xhttp = new XMLHttpRequest();
+xhttp.open("GET", "../data/products", true);
+xhttp.send();
+
+xhttp.onreadystatechange = function(){
+  if(this.readyState == 4 && this.status ==200){
+
+    let vendedores = JSON.parse(this.responseText);
+  } 
+}
+}*/
+  const vendedores = [
+     {seller_id:"179571326", nombre:"Marcos"},
+     {seller_id:"179532615", nombre:"Aurelio"},
+     {seller_id:"178968551", nombre:"Arturo"},
+     {seller_id:"179125469", nombre:"Pedro"},
+     {seller_id:"179571333", nombre:"Nicolas"},
+     {seller_id:"176918111", nombre:"Magali"},
+     {seller_id:"173615555", nombre:"edro"},
+     {seller_id:"165915784", nombre:"Marcelo"},
+     {seller_id:"159918111", nombre:"Magali"},
+     {seller_id:"126615555", nombre:"Pedro Armando"},
     ]
 
     const formulario = document.querySelector("#formulario");
@@ -39,10 +58,10 @@
      // console.log(formulario.value);
      const texto = formulario.value.toLowerCase();
      for(let vendedor of vendedores){ 
-      let nombre = vendedor.nombre.toLowerCase();
-       if(nombre.indexOf(texto) !== -1){
+      let seller_id = vendedor.seller_id.toLowerCase();
+       if(seller_id.indexOf(texto) !== -1){
          resultado.innerHTML += `
-        <li><a href="/products">${vendedor.seller_id} - nombre:${vendedor.nombre}</a></li>
+        <li><a href="/products/${vendedor.seller_id}">${vendedor.seller_id} - Nombre: ${vendedor.nombre}</a></li>
            `               
      } 
     }
@@ -53,10 +72,12 @@
     } 
   }
 
+
     boton.addEventListener("click", filtrar)
     formulario.addEventListener("keyup", filtrar);
 
     filtrar;
+
 
   </script>
   

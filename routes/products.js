@@ -5,6 +5,7 @@ const path = require("path");
 const productsController = require("../Controllers/productsController");
 
 /* GET home page. */
-router.get('/', productsController.productos);
+router.get('/:id', productsController.productos);
+
 
 module.exports = router;

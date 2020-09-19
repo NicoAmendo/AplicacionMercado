@@ -1,5 +1,5 @@
 #bodyform{
-    width:475;
+    width:675px;
     background-color:#60799b;
     border: solid 3px rgb(204, 219, 204);
     color: white;
@@ -18,3 +18,12 @@
     margin-top: 10px;
     margin-bottom: 20px;
 } 
+
+#boton{
+    background-color:#60799b;
+    }
+
+    #resultado{
+        text-decoration: none;
+        color: white;
+    }  
